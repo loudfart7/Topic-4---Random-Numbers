@@ -99,7 +99,6 @@ namespace Topic_4___Random_Numbers
             Console.WriteLine();
 
             Console.Write("How many decimal places would you like your generated number to round up to?: ");
-            dcml_round = Convert.ToInt32(Console.ReadLine());
             while (!int.TryParse(Console.ReadLine(), out dcml_round))
             {
                 Console.WriteLine();
@@ -113,26 +112,23 @@ namespace Topic_4___Random_Numbers
 
             //
             Console.WriteLine() ;
-            num = (Math.Round((random_number = generator.Next(min, max))+(generator.NextDouble()), dcml_round));
+            num = Math.Round(generator.Next(min, max) + generator.NextDouble(), dcml_round);
 
-            if (num < max)
-                num = max;
 
-            Console.WriteLine(num);
-
-            Console.WriteLine();
-            num = (Math.Round((random_number = generator.Next(min, max)) + (generator.NextDouble()), dcml_round));
-
-            if (num < max)
-                num = max;
 
             Console.WriteLine(num);
 
             Console.WriteLine();
-            num = (Math.Round((random_number = generator.Next(min, max)) + (generator.NextDouble()), dcml_round));
+            num = Math.Round(generator.Next(min, max) + generator.NextDouble(), dcml_round);
 
-            if (num < max)
-                num = max;
+            
+
+            Console.WriteLine(num);
+
+            Console.WriteLine();
+            num = Math.Round(generator.Next(min, max) + generator.NextDouble(), dcml_round);
+
+
 
             Console.WriteLine(num);
             //
