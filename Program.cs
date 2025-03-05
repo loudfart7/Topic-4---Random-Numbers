@@ -23,21 +23,31 @@ namespace Topic_4___Random_Numbers
             Console.WriteLine();
 
             Console.Write("MIN: ");
-            min = Convert.ToInt32(Console.ReadLine());
+            while (!int.TryParse(Console.ReadLine(), out min))
+            {
+                Console.WriteLine();
+                Console.WriteLine("Invalid input, please try again. Input must only contain numbers can must not contain letters or special characters.");
+                Console.WriteLine();
+            }
 
             Console.WriteLine();
 
             Console.Write("MAX: ");
-            max = Convert.ToInt32(Console.ReadLine());
+            while (!int.TryParse(Console.ReadLine(), out max))
+            {
+                Console.WriteLine();
+                Console.WriteLine("Invalid input, please try again. Input must only contain numbers can must not contain letters or special characters.");
+                Console.WriteLine();
+            }
 
             if (min > max)
             {
                 int temp = min;
-                min = max + 1;
+                min = max;
                 max = temp;
             }
 
-            random_number = generator.Next(min, max);
+            random_number = generator.Next(min, max+1);
             Console.WriteLine();
 
             Console.WriteLine($"Random number generated: {random_number}");
@@ -49,36 +59,36 @@ namespace Topic_4___Random_Numbers
             Console.ReadLine();
             Console.Clear();
 
-            ////Part 2
+            //Part 2
 
-            //int die1, die2, die_sum;
+            int die1, die2, die_sum;
 
-            //Console.WriteLine("┌───────────────────┐");
-            //Console.WriteLine(" Part 2: Dice Roller");
-            //Console.WriteLine("└───────────────────┘");
-            //Console.WriteLine();
+            Console.WriteLine("┌───────────────────┐");
+            Console.WriteLine(" Part 2: Dice Roller");
+            Console.WriteLine("└───────────────────┘");
+            Console.WriteLine();
 
-            //Console.WriteLine("Press ENTER to roll 2 dice:");
-            //Console.ReadLine();
+            Console.WriteLine("Press ENTER to roll 2 dice:");
+            Console.ReadLine();
 
-            //die1 = generator.Next(7);
-            //die2 = generator.Next(7);
+            die1 = generator.Next(7);
+            die2 = generator.Next(7);
 
-            //Console.WriteLine($"Die 1: {die1}");
-            //Console.WriteLine($"Die 2: {die2}");
-            //Console.WriteLine();
+            Console.WriteLine($"Die 1: {die1}");
+            Console.WriteLine($"Die 2: {die2}");
+            Console.WriteLine();
 
-            //die_sum = die1 + die2;
-            //Console.WriteLine($"TOTAL SUM: {die_sum}");
+            die_sum = die1 + die2;
+            Console.WriteLine($"TOTAL SUM: {die_sum}");
 
-            //Console.WriteLine();
-            //Console.WriteLine("┌───────────────────────┐");
-            //Console.WriteLine(" PRESS ENTER TO CONTINUE ");
-            //Console.WriteLine("└───────────────────────┘");
-            //Console.ReadLine();
-            //Console.Clear();
+            Console.WriteLine();
+            Console.WriteLine("┌───────────────────────┐");
+            Console.WriteLine(" PRESS ENTER TO CONTINUE ");
+            Console.WriteLine("└───────────────────────┘");
+            Console.ReadLine();
+            Console.Clear();
 
-            ////Part 3
+            //Part 3
 
             int dcml_round = 0;
             double num;
@@ -90,6 +100,12 @@ namespace Topic_4___Random_Numbers
 
             Console.Write("How many decimal places would you like your generated number to round up to?: ");
             dcml_round = Convert.ToInt32(Console.ReadLine());
+            while (!int.TryParse(Console.ReadLine(), out dcml_round))
+            {
+                Console.WriteLine();
+                Console.WriteLine("Invalid input, please try again. Input must only contain numbers can must not contain letters or special characters.");
+                Console.WriteLine();
+            }
 
             Console.WriteLine() ;
 
